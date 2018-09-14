@@ -1,0 +1,62 @@
+/*公用样式*/
+.go {
+    position: fixed;
+    /*fixed是设置固定定位*/
+    right: 40px;
+    top: 40px;
+    z-index: 999;
+}
+.more {
+    position: fixed;
+    right: 60px;
+    bottom: 90px;
+    z-index: 999;
+    animation: more .6s linear infinite alternate;
+   /* animation用来设置动画效果
+    五个属性按顺序分别为：
+    1、调用选择器名称；
+    2、动画完成花费时间；
+    3、动画速度曲线，linear为匀速；
+    4、动画播放的次数，infinite为无限次；
+    5、轮流反向播放动画：alternate为交替播放；*/
+}
+
+/*固定内容在底部中心*/
+.container {
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    /*给他一个绝对定位*/
+    bottom: 0;
+    left: 50%;
+    margin-left: -450px;
+}
+@keyframes more {
+    /*通过@keyframes创建动画效果
+    开始：0%
+    结束：100%*/
+    0% {
+        transform: translateY(-10px);
+        /*transform用于2D或3D转换*/
+    }
+    100% {
+        transform:translateY(10px);
+    }
+}
+
+/*第一屏 布局*/
+.section:nth-child(1) {
+    /*就是选中section的父元素下的第一个section*/
+    background: url("../images/01-bg.png") no-repeat center bottom;
+}
+.section:nth-child(1) .goods {
+    position: absolute;
+    bottom: 140px;
+    left: 50px;
+}
+.section:nth-child(1) .sofa {
+    position: absolute;
+    left: 200px;
+    top: 160px;
+    animation: up-down .7s linear infinite alternate;
+}
